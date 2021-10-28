@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>post job</title>
+	<style type="text/css">
+		body  {
+			margin: 0;
+			padding: 0;
+			background-image: url(image/home.jpg);
+		}
+		.dg	{
+			width: 450px;
+			height: 530px;
+			background:#000;
+			color: #fff;
+			left:30%;
+			position: absolute;
+			opacity: .9;
+			font-size: 28px;
+			animation: mk 2s infinite alternate;
+			border-style: solid;
+			border-color: green;
+		}
+		@keyframes mk{
+			from{border-radius: 2%;}
+			to{border-radius: 10%;}
+		}
+		h1  {
+		    margin: 0; 
+            color: white;
+            background-color: rgb(2, 49, 15);
+		}
+		h2  {
+		    margin: 0;
+            color: black;
+            background-color: yellow;
+            text-align: center;
+            opacity: .7;
+		}
+		.jb input  {
+			height: 30px;
+			width: 400px;
+			font-size: 18PX;
+            color: red;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+		}
+		.jb button  {
+			margin-left: 32%;
+			background-color: gray;
+			height: 40px;
+			width: 140px;
+		}
+		.jb input[type="submit"]  {
+			width: 100px;
+			color: #fff;
+			background-color: red;
+			font-size: 20px;
+		}
+	</style>
+</head>
+<body>
+	
+	<h1> <marquee> CHANCE  FOR  EVERYONE. </marquee></h1>
+	<h2>POST THE JOB HERE</h2>
+	<div class="dg">
+	<form action="postjob.php" method="GET" autocomplete="off">
+	<div class="jb">
+		<p><input type="text" name="category" placeholder="Enter Job Category" required ></p>
+		<p><input type="text" name="title" placeholder="Enter Job Title" required ></p>
+		<p><input type="text" name="experience" placeholder="Enter Job Experience" required ></p>
+		<p><input type="text" name="qualification" placeholder="Enter Job Qualification" required ></p>
+		<p><input type="text" name="skills" placeholder="Enter Job Skills" required ></p>
+		<p><input type="text" name="salary" placeholder="Enter Job Salary" required ></p>
+		<p><input type="text" name="location" placeholder="Enter Location" required ></p>
+		<button><input type="submit" name="submit" value="submit"></button>
+		
+	</div>
+	</form>
+	</div>
+
+</body>
+</html>

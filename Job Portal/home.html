@@ -1,0 +1,149 @@
+<html>
+<head>
+	<title> job portal</title>
+
+	<style type="text/css">
+		body
+        {
+            margin: 0%;
+            padding: 0%;
+           background-image: url(seeker/image/home.jpg)
+        }
+
+        h1
+        {
+            margin: 0;
+            color: white;
+            background-color: rgb(2, 49, 15);
+            text-align: center;
+            word-spacing: 10px;
+        }
+        .lg
+        {
+            margin: 0;
+            color: white;
+            background-color: black;
+            margin-top:0px;
+            opacity: .9;
+        }
+        .lg a
+        {
+            color: red;
+            text-decoration: none;
+        }
+        .lg a:hover
+        {
+            background-color: gray;
+            color: rgb(0, 255, 64);
+        }
+        .menu ul
+        {
+            margin: 0;
+            list-style: none;
+        }
+        .menu ul li
+        {
+            width: 160px;
+            height: 35px;
+            background-color:  black;
+            text-align: center;
+
+            line-height: 35px;
+            float: left;
+            border-right: 1px grey solid;
+            position: relative;
+            left: 350px;
+            opacity: .9;
+        }
+        .menu ul li a
+        {
+            color:white;
+            display: block;
+            text-decoration: none;
+        }
+        .menu ul li a:hover
+        {
+            color: rgb(0, 255, 64);
+            background-color: gray;
+        }
+        
+        .slider
+        {
+            width: 800px;
+            margin: auto;
+            overflow: hidden;
+            border: 10px solid white;
+            box-shadow: 0px 0px 5px 2px black;
+        }
+        .ph
+        {
+            position: relative;
+        	width: 3200px;
+            animation-name: manish;
+            animation-duration: 20s;
+            animation-iteration-count: infinite;
+            opacity: .9;
+        }
+        .ph img
+        {
+            float: left;
+        }
+        @keyframes manish
+        {
+            0%
+            {
+                left:0px;
+            }
+            20%
+            {
+                left:0px;
+            }
+            25%
+            {
+                left: -800px;
+            }
+            45%
+            {
+                left: -800px;
+            }
+            50%
+            {
+                left: -1600px;
+            }
+            70%
+            {
+                left: -1600px;
+            }
+            75%
+            {
+                left: -2400px;
+            }
+            95%
+            {
+                left: -2400px;
+            }   
+        }
+	</style>
+</head>
+<body>
+   
+	<h1> <marquee>WELCOME  TO ONLINE JOB PORTAL. </marquee></h1>
+    <h1 class="lg"> Your Future:<a href="Admin/login.php">Admin Login</a> </h1>
+    <div class="menu">
+        <ul>
+            <li><a href=""> HOME </a></li>
+            <li> <a href="company/clogin.html"> COMPANY LOGIN </a></li>
+	        <li> <a href="seeker/login.html"> USER LOGIN </a></li>
+            
+        </ul>
+    </div>
+    <div class="slider">
+        <div class="ph">
+	       <img src="company/image/j2.jpg">
+           <img src="company/image/j7.jpg">
+           <img src="company/image/j5.jpg">
+           <img src="company/image/j1.jpg">	
+        </div>
+    </div>
+</body>
+</html>

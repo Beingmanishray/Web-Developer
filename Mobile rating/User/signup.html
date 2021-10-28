@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>SIGNUP PAGE</title>
+<style type="text/css">
+	body{
+	margin: 0;
+	padding: 0;
+	background-image: url(images/lov.jpeg);
+	background-size:cover;
+	background-position: center;
+	font-family: sans-serif;
+}
+.loginbox{
+	width: 450px;
+	height: 620px;
+	background:#000;
+	color: #fff;
+	top: 10%;
+	left: 35%;
+	position: absolute;
+	transform: tranlate(-50%, -50%);
+	box-sizing: border-box;
+	padding: 70px 30px;
+	border-radius: 10%;
+}
+
+.log{
+	width:100px;
+	height:100px;
+	border-radius: 50%;
+	position: absolute;
+	top: -40px;
+	left: calc(50% - 50px);
+}
+h1{
+	margin: 0;
+	padding: 0 0 20px;
+  text-align: center;
+	font-size: 30px;
+}
+h4{
+	margin: 0;
+	padding: 0 0 10px;
+	text-align: center;
+	font-size: 20px;
+}
+
+
+.loginbox input{
+	width:100%;
+	margin-bottom: 20px;
+}
+
+.loginbox input[type="text"], input[type="password"]
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+}
+.loginbox input[type="text"], input[type="conform password"]
+{
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: transparent;
+	outline: none;
+	height: 40px;
+	color: #fff;
+	font-size: 16px;
+}
+
+
+.loginbox input[type="submit"]
+{
+	border: none;
+	outline: none;
+	height: 40px;
+	background: #fb2525;
+	color: #fff;
+	font-size: 18px;
+	border-radius: 20px;
+}
+.loginbox input[type="submit"]:hover
+{
+	cursor: pointer;
+	background: #ffc107;
+	color: #000;
+}
+.loginbox a{
+  text-decoration: none;
+	font-size: 25px;
+	line-height: 20px;
+    color: darkgrey;
+}
+.loginbox a:hover
+{
+	color: #ffc107;
+}
+
+
+</style>
+<body>
+     <div class="loginbox">
+	 <img src="images/sign.jpg"class="log">
+	  <h1>Signup Here</h1>
+	  <form action="sign.php" method="post" autocomplete="off">
+	  
+		 <input type="text" name="username" placeholder="Enter Username" required>
+		 <input type="text" name="Email" placeholder="Enter your email" required>    
+		 <input type="password" name="password" placeholder="Enter Password" required>		 
+		 <input type="password" name="conform password" placeholder="Enter conform Password" required>
+		 <input type="submit" name="" value="Sign up">
+		<h4>After signin click the following link.</h4>
+		 <a href="login.html"> Now Login here</a>
+	 </form>
+</body>
+</head>
+</html>

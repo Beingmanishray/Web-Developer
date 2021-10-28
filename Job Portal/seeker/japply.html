@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>post job</title>
+	<style type="text/css">
+		body {
+			margin: 0;
+			padding: 0;
+			background-image: url(image/home1.jpg);
+		}
+		.dg {
+			width: 450px;
+			height: 500px;
+			background:#000;
+			color: #fff;
+            margin-left: auto;
+            margin-right: auto;
+			font-size: 28px;
+			opacity: .8;
+			animation: mk 2s infinite alternate;
+			border-style: solid;
+			border-color: green;
+		}
+		@keyframes mk{
+			from{border-radius: 2%;}
+			to{border-radius: 15%;}
+		}
+		h1 {
+		    margin: 0; 
+            color: white;
+            background-color: rgb(2, 49, 15);
+		}
+		h2 {
+		    margin: 0;
+            color: black;
+            background-color: yellow;
+            text-align: center;
+            opacity: .7;
+		}
+		.jb input {
+			height: 30px;
+			width: 400px;
+			font-size: 18PX;
+            color: red;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+        }
+        .jb button {
+			margin-left: 32%;
+			background-color: gray;
+			height: 40px;
+			width: 140px;
+		}
+		.jb input[type="submit"] {
+			width: 100px;
+			color: #fff;
+			background-color: red;
+			font-size: 20px;
+		}
+        .rej {          
+           padding-left: 40px;
+        }
+	</style>
+</head>
+<body>
+	
+	<h1> <marquee> CHANCE  FOR  EVERYONE. </marquee></h1>
+	<h2>APPLY JOB HERE</h2>
+	<div class="dg">
+	<form action="japply.php" method="POST" enctype="multipart/form-data" autocomplete="off">
+	<div class="jb">
+		<input style="margin-top: 20px" type="text" name="jid" placeholder="Enter Job ID" required></p>
+		<input type="text" name="name" placeholder="Enter Full Name" required></p>
+		<input type="email" name="email" placeholder="Enter Email" required ></p>
+		<input type="text" name="number" placeholder="Enter Contact Number" required></p>
+        <input type="text" name="location" placeholder="Enter Location" required></p>
+        <div class="rej"><label> Select your Resume:</label><input type="file" name="resume" required ></div></p>
+		<button><input type="submit" name="apply" value="APPLY"></button>		
+	</div>
+	</form>
+	</div>
+</body>
+</html>
