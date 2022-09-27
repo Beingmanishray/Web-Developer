@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  margin: 0;
+  min-width: 250px;
+}
+
+/* Include the padding and border in an element's total width and height */
+* {
+  box-sizing: border-box;
+}
+
+/* Remove margins and padding from the list */
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+/* Style the list items */
+ul li {
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  list-style-type: none;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.2s;
+  
+  
+}
+
+/* Set all odd list items to a different color (zebra-stripes) */
+ul li:nth-child(odd) {
+  background: #f9f9f9;
+}
+
+/* Darker background-color on hover */
+ul li:hover {
+  background: #ddd;
+}
+
+/* Style the close button */
+.close {
+  position: absolute;
+  right: 0;
+  top: 0;
+  padding: 12px 16px 12px 16px;
+}
+
+.close:hover {
+  background-color: #f44336;
+  color: white;
+}
+
+/* Style the header */
+.header {
+  background-color: #36abf4;
+  /* padding: 30px 40px; */
+  color: white;
+  /* text-align: center; */
+  margin-bottom: 1%;
+}
+.header1{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Clear floats after the header */
+.header:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Style the input */
+input {
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  width: 100%;
+  /* padding: 10px; */
+  /* float: left; */
+  font-size: 16px;
+}
+
+/* Style the "Add" button */
+.addBtn {
+    position: absolute;
+  background: #d9d9d9;
+  color: #555;
+  /* float: left; */
+  text-align: center;
+  font-size: 14px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 10%;
+  transform: translateX(2px);
+  right: 15.3%;
+}
+.ToDo{
+    width: 70%;
+    margin: 5% auto;
+}
+
+.addBtn:hover {
+  background-color: #bbb;
+}
+#btn{
+    border-color: white;
+    background-color: #36abf4;
+    cursor: pointer;
+}
+#btn:hover{
+    background-color: #bbf436;
+}
+h2{
+    text-shadow:  2px 0 #ccc;
+}
+.inbtn {
+    width: 100%;
+    position: relative;
+    padding: 5%;
+}
+
+</style>
+</head>
+<body>
+<div class="ToDo">
+    <div id="myDIV" class="header">
+        <div class="header1">
+            <h2>My To Do List</h2>
+            <button type="button" class="btn btn-secondary" id="btn" onclick="showinput()">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil" viewBox="0 0 16 16">
+                    <path d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"/>
+                </svg>
+            </button>
+        </div>
+        <div id="inbtn">
+            <input type="text" id="myInput" placeholder="Title...">
+            <button onclick="newElement()" id="myBtn" class="addBtn">Add</button>
+        </div>
+    </div>
+
+    <ul id="myUL">
+    <li>Hit the gym</li>
+    <li>Pay bills</li>
+    <li>Meet George</li>
+    </ul>
+</div>
+<script>
+
+function showinput() {
+    var x = document.getElementById("inbtn");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+}
+
+
+// Create a "close" button and append it to each list item
+var myNodelist = document.getElementsByTagName("LI");
+var i;
+for (i = 0; i < myNodelist.length; i++) {
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  myNodelist[i].appendChild(span);
+}
+
+// Click on a close button to hide the current list item
+var close = document.getElementsByClassName("close");
+var i;
+for (i = 0; i < close.length; i++) {
+  close[i].onclick = function() {
+    var div = this.parentElement;
+    div.style.display = "none";
+  }
+}
+
+
+
+// Create a new list item when clicking on the "Add" button
+function newElement() {
+  var li = document.createElement("li");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  li.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(li);
+  }
+  document.getElementById("myInput").value = "";
+
+  var span = document.createElement("SPAN");
+  var txt = document.createTextNode("\u00D7");
+  span.className = "close";
+  span.appendChild(txt);
+  li.appendChild(span);
+
+  for (i = 0; i < close.length; i++) {
+    close[i].onclick = function() {
+      var div = this.parentElement;
+      div.style.display = "none";
+    }
+  }
+}
+
+var input = document.getElementById("myInput");
+input.addEventListener("keypress", function(event) {
+  if (event.key === "Enter") {
+    event.preventDefault();
+    document.getElementById("myBtn").click();
+  }
+});
+</script>
+
+</body>
+</html>

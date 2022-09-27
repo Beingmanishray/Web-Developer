@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <!-- Bootstrap Font Icon CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+        
+    <style>
+        body{
+            background-color: #283048;
+            font-family: 'Open Sans', sans-serif;
+            background: linear-gradient(to right, #859398, #283048);
+            margin: 0%;
+            padding: 0%;
+        }
+        .container{
+            width: 360px;
+            margin: 100px auto;
+            background: #f7f7f7;
+            box-shadow: 0 0 3px rgb(0 0 0 / 10%);
+            display: block;
+            padding: 0%;
+        }
+        h1{
+            background-color: #2980b9;
+            color: #fff;
+            margin: 0;
+            padding: 10px 20px;
+            width: 100%;
+            text-transform: uppercase;
+            font-size: 24px;
+            font-weight: 400;
+        }
+        .bi-pencil{
+            float: right;
+        }
+        input{
+            font-size: 18px;
+            font-weight: 600;
+            color: #2980b9;
+            background-color: #f7f7f7;
+            width: 100%;
+            padding: 13px 13px 13px 20px;
+            box-sizing: border-box;
+            border: 3px solid rgba(0,0,0,0);
+        }
+        ul{
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: block;
+            /* list-style-type: disc; */
+            margin-block-start: 1em;
+            margin-block-end: 1em;
+            margin-inline-start: 0px;
+            margin-inline-end: 0px;
+            padding-inline-start: 40px;
+        }
+        /* Remove margins and padding from the list */
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Style the list items */
+        ul li {
+            cursor: pointer;
+            position: relative;
+            padding: 12px 8px 12px 40px;
+            list-style-type: none;
+            background: #eee;
+            font-size: 18px;
+            transition: 0.2s;
+            
+        }
+
+        /* Set all odd list items to a different color (zebra-stripes) */
+        ul li:nth-child(odd) {
+            background: #f9f9f9;
+        }
+
+        /* Darker background-color on hover */
+        ul li:hover {
+            background: #ddd;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        
+        <h1>To-Do List
+            <i class="bi bi-pencil" onclick="showinput()"></i>
+        </h1>
+        <input type="text" placeholder="Add New Todo" id="inbtn" onkeypress="newElement()" required>
+        <ul id="myUL">
+            <li><span></span> Finish to do list</li>
+            <li><span></span> Play Skyrim</li>
+            <li><span><i class="fa fa-trash"></i></span> Learn CSS Grid</li>
+        </ul>
+               
+    </div>
+    
+    <script>
+        function showinput() {
+            var x = document.getElementById("inbtn");
+            if (x.style.display === "block") {
+                x.style.display = "none";
+            } else {
+                x.style.display = "block";
+            }
+        }
+
+        // Create a new list item when clicking on the "Add" button
+        function newElement() {
+        var li = document.createElement("li");
+        var inputValue = document.getElementById("inbtn").value;
+        var t = document.createTextNode(inputValue);
+        li.appendChild(t);
+        if (event.key === "Enter") {
+            if (inputValue === '') {
+                alert("You must write something!");
+            } else {
+                document.getElementById("myUL").appendChild(li);
+            }
+            document.getElementById("inbtn").value = "";
+
+            var span = document.createElement("SPAN");
+            span.className = "bi-trash";
+            li.appendChild(span);
+            var closes = document.getElementsByClassName("bi-trash");
+            var i;
+
+            for (i = 0; i < closes.length; i++) {
+                closes[i].onclick = function() {
+                var div = this.parentElement;
+                div.style.display = "none";
+                }
+            }
+            }
+        }
+        
+        // Create a "close" button and append it to each list item
+        var myNodelist = document.getElementsByTagName("LI");
+        var i;
+        for (i = 0; i < myNodelist.length; i++) {
+        var span = document.createElement("SPAN");
+        span.className = "bi bi-trash";
+        myNodelist[i].appendChild(span);
+        }
+
+        // Click on a close button to hide the current list item
+        var closes = document.getElementsByClassName("bi-trash");
+        var i;
+        for (i = 0; i < closes.length; i++) {
+        closes[i].onclick = function() {
+            var div = this.parentElement;
+            div.style.display = "none";
+        }
+        }
+
+
+
+        
+
+    </script>
+</body>
+</html>
